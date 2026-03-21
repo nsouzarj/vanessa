@@ -1,16 +1,64 @@
-# React + Vite
+# Vanessa Passos — Advocacia Previdenciária
+### Landing Page Profissional e Sofisticada
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta é a landing page oficial de **Vanessa Passos**, advogada especialista em Direito Previdenciário (INSS). O projeto foi desenvolvido para refletir autoridade, confiança e agilidade, oferecendo uma experiência de usuário premium e intuitiva.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🏛️ Sobre o Projeto
 
-## React Compiler
+O site serve como porta de entrada digital para clientes que buscam consultoria jurídica especializada. O design foi cuidadosamente elaborado para transmitir seriedade e profissionalismo, utilizando uma paleta de cores clássica e elementos visuais modernos.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Identidade Visual
+- **Paleta de Cores**: Marinho Profundo (`#002147`) e Ouro Acetinado (`#d4af37`), criando um contraste elegante e de alta legibilidade.
+- **Tipografia**: Combinação de *Playfair Display* (Serifada para títulos) e *Inter* (Sans-serif para corpo de texto).
+- **Favicon**: Ícone personalizado com a balança da justiça em dourado, otimizado para navegadores e dispositivos móveis.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tecnologias Utilizadas
+
+O projeto utiliza as ferramentas mais modernas do ecossistema Frontend para garantir performance e manutenibilidade:
+
+- **[React 19](https://react.dev/)**: Biblioteca principal para construção da interface.
+- **[Vite 8](https://vitejs.dev/)**: Build tool ultra-rápida para uma experiência de desenvolvimento superior.
+- **[Framer Motion](https://www.framer.com/motion/)**: Biblioteca de animações para transições suaves e interações premium.
+- **[Lucide React](https://lucide.dev/)**: Conjunto de ícones vetoriais elegantes e leves.
+- **Vanilla CSS**: Sistema de estilos puro com variáveis CSS para máxima performance e flexibilidade.
+
+---
+
+## ✨ Funcionalidades Principais
+
+- **Design Responsivo**: Totalmente otimizado para smartphones, tablets e desktops.
+- **Seção de Especialidades**: Cards interativos detalhando serviços como Aposentadorias, BPC/LOAS e Auxílio-Doença.
+- **CTA Flutuante (WhatsApp)**: Integração direta para agendamento de consultoria.
+- **Animações "Reveal"**: Elementos que surgem suavemente conforme o usuário navega pela página.
+- **Micro-interações**: Efeitos de hover e feedback visual em todos os elementos interativos.
+
+---
+
+## 🚀 Como Executar o Projeto
+
+Para rodar o projeto localmente, siga os passos abaixo:
+
+1. **Instalar dependências**:
+   ```bash
+   npm install
+   ```
+
+2. **Iniciar servidor de desenvolvimento**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Gerar Build de Produção**:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 📜 Licença
+
+Desenvolvido com foco em excelência jurídica e design estratégico. Todos os direitos reservados.
