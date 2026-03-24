@@ -14,7 +14,7 @@ const Hero = () => {
       backgroundPosition: 'center',
       color: 'white',
       overflow: 'hidden',
-      padding: '80px 0 40px'
+      padding: 'max(140px, 15vh) 0 60px'
     }}>
       <div className="gradient-overlay"></div>
       

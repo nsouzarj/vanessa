@@ -16,7 +16,7 @@ const About = () => {
           <div style={{ position: 'relative' }}>
              <img 
                src={vanessaPhoto} 
-               alt="Vanessa Passos - Advogada Previdenciarista"
+               alt="Vanessa Passos - Consultoria Jurídica"
                style={{ 
                  width: '100%', 
                  maxHeight: '550px', 

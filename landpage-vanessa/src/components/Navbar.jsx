@@ -1,36 +1,71 @@
 import React, { useState, useEffect } from 'react';
-import { Scale, Phone, Menu, X } from 'lucide-react';
+import { Phone, Menu, X } from 'lucide-react';
+import downloadLogo from '../assets/download.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
+    const handleEvents = () => {
       setIsMobile(window.innerWidth < 992);
+      setScrolled(window.scrollY > 20);
     };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    
+    handleEvents();
+    window.addEventListener('resize', handleEvents);
+    window.addEventListener('scroll', handleEvents);
+    
+    return () => {
+      window.removeEventListener('resize', handleEvents);
+      window.removeEventListener('scroll', handleEvents);
+    };
   }, []);
 
   return (
     <nav style={{
-      position: 'sticky',
+      position: 'fixed',
       top: 0,
+      left: 0,
       width: '100%',
-      backgroundColor: 'rgba(255, 255, 255, 0.98)',
+      backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.98)' : 'rgba(255, 255, 255, 1)',
       backdropFilter: 'blur(10px)',
       zIndex: 1000,
-      boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
-      padding: '0.8rem 0'
+      boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.08)' : '0 1px 4px rgba(0,0,0,0.02)',
+      padding: scrolled ? '0.2rem 0' : '0.6rem 0',
+      transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
     }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <Scale size={isMobile ? 24 : 36} color="var(--primary-navy)" />
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontWeight: 900, fontSize: isMobile ? '1rem' : '1.4rem', color: 'var(--primary-navy)', lineHeight: 1, letterSpacing: '0.5px' }}>VANESSA PASSOS</span>
-            <span style={{ fontSize: isMobile ? '0.55rem' : '0.75rem', color: 'var(--accent-gold)', letterSpacing: '1.5px', fontWeight: 800, marginTop: '2px' }}>ADVOGADA PREVIDENCIARISTA</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: scrolled ? '10px' : '12px', transition: 'all 0.4s ease' }}>
+          <img src={downloadLogo} alt="Icon" style={{ 
+            height: scrolled ? (isMobile ? '42px' : '58px') : (isMobile ? '55px' : '85px'), 
+            width: 'auto', 
+            objectFit: 'contain',
+            transition: 'all 0.4s ease'
+          }} />
+          <div style={{ display: 'flex', flexDirection: 'column', transition: 'all 0.4s ease' }}>
+            <span style={{ 
+              fontFamily: "'Cinzel', serif", 
+              fontWeight: 700, 
+              fontSize: scrolled ? (isMobile ? '1.4rem' : '1.9rem') : (isMobile ? '1.6rem' : '2.6rem'), 
+              color: 'var(--primary-navy)', 
+              lineHeight: 1, 
+              letterSpacing: '1px',
+              transition: 'all 0.4s ease'
+            }}>VANESSA PASSOS</span>
+            <span style={{ 
+              fontFamily: "'Montserrat', sans-serif", 
+              fontSize: scrolled ? (isMobile ? '0.45rem' : '0.62rem') : (isMobile ? '0.52rem' : '0.82rem'), 
+              color: 'var(--accent-gold)', 
+              letterSpacing: scrolled ? (isMobile ? '4.2px' : '6.8px') : (isMobile ? '6px' : '9.8px'), 
+              fontWeight: 700, 
+              marginTop: scrolled ? '1px' : '4px',
+              textTransform: 'uppercase',
+              display: 'block',
+              width: '100%',
+              transition: 'all 0.4s ease'
+            }}>CONSULTORIA JURÍDICA</span>
           </div>
         </div>
         
@@ -40,6 +75,7 @@ const Navbar = () => {
             <a href="#inicio" style={{ textDecoration: 'none', color: 'var(--text-dark)', fontWeight: 500, fontSize: '0.9rem' }}>Início</a>
             <a href="#servicos" style={{ textDecoration: 'none', color: 'var(--text-dark)', fontWeight: 500, fontSize: '0.9rem' }}>Serviços</a>
             <a href="#sobre" style={{ textDecoration: 'none', color: 'var(--text-dark)', fontWeight: 500, fontSize: '0.9rem' }}>Sobre</a>
+            <a href="#localizacao" style={{ textDecoration: 'none', color: 'var(--text-dark)', fontWeight: 500, fontSize: '0.9rem' }}>Localização</a>
             <a href="https://wa.me/5521982486110" target="_blank" className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 20px', fontSize: '0.85rem' }}>
               <Phone size={14} />
               Consultar Agora
@@ -74,6 +110,7 @@ const Navbar = () => {
           <a href="#inicio" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'var(--text-dark)', fontWeight: 600, fontSize: '1.1rem' }}>Início</a>
           <a href="#servicos" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'var(--text-dark)', fontWeight: 600, fontSize: '1.1rem' }}>Serviços</a>
           <a href="#sobre" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'var(--text-dark)', fontWeight: 600, fontSize: '1.1rem' }}>Sobre</a>
+          <a href="#localizacao" onClick={() => setIsOpen(false)} style={{ textDecoration: 'none', color: 'var(--text-dark)', fontWeight: 600, fontSize: '1.1rem' }}>Localização</a>
           <a href="https://wa.me/5521982486110" target="_blank" className="btn btn-primary" style={{ textAlign: 'center', padding: '15px' }}>
             <Phone size={18} style={{ marginRight: '10px', verticalAlign: 'middle' }} />
             Consultar Agora
