@@ -54,6 +54,9 @@ const Footer = () => {
             <li style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
               <Mail size={16} color="var(--accent-gold)" /> <a href="mailto:dravanessa.passos@gmail.com" style={{ color: 'white', textDecoration: 'none' }}>dravanessa.passos@gmail.com</a>
             </li>
+            <li style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+              <Mail size={16} color="var(--accent-gold)" /> <a href="mailto:contato@vanessapassos.adv.br" style={{ color: 'white', textDecoration: 'none' }}>contato@vanessapassos.adv.br</a>
+            </li>
             <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Instagram size={16} color="var(--accent-gold)" /> <a href="https://www.instagram.com/seuspassosjuridicos/" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none' }}>@seuspassosjuridicos</a>
             </li>
